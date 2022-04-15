@@ -14,6 +14,8 @@
 		A3E0B5B0280846D2005E3D12 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3E0B5AE280846D2005E3D12 /* Main.storyboard */; };
 		A3E0B5B2280846D3005E3D12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3E0B5B1280846D3005E3D12 /* Assets.xcassets */; };
 		A3E0B5B5280846D3005E3D12 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3E0B5B3280846D3005E3D12 /* LaunchScreen.storyboard */; };
+		A3EE1CD928097D1F000B301E /* AnimationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EE1CD828097D1F000B301E /* AnimationType.swift */; };
+		A3EE1CDC28097F0D000B301E /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EE1CDB28097F0D000B301E /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		A3E0B5B1280846D3005E3D12 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A3E0B5B4280846D3005E3D12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A3E0B5B6280846D3005E3D12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A3EE1CD828097D1F000B301E /* AnimationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationType.swift; sourceTree = "<group>"; };
+		A3EE1CDB28097F0D000B301E /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		E33801678CD74CA7CF09BE05 /* Pods_Animation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Animation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EED8E5335675274F68670A0E /* Pods-Animation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Animation.release.xcconfig"; path = "Target Support Files/Pods-Animation/Pods-Animation.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -48,7 +52,6 @@
 				9E068027EFAFE15DC358FED0 /* Pods-Animation.debug.xcconfig */,
 				EED8E5335675274F68670A0E /* Pods-Animation.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -81,15 +84,65 @@
 		A3E0B5A7280846D2005E3D12 /* Animation */ = {
 			isa = PBXGroup;
 			children = (
-				A3E0B5A8280846D2005E3D12 /* AppDelegate.swift */,
-				A3E0B5AA280846D2005E3D12 /* SceneDelegate.swift */,
-				A3E0B5AC280846D2005E3D12 /* ViewController.swift */,
-				A3E0B5AE280846D2005E3D12 /* Main.storyboard */,
-				A3E0B5B1280846D3005E3D12 /* Assets.xcassets */,
-				A3E0B5B3280846D3005E3D12 /* LaunchScreen.storyboard */,
-				A3E0B5B6280846D3005E3D12 /* Info.plist */,
+				A3EE1CDA28097EF3000B301E /* Services */,
+				A3EE1CD728097CF4000B301E /* Models */,
+				A3EE1CD328097C9C000B301E /* App */,
+				A3EE1CD428097CB1000B301E /* Controllers */,
+				A3EE1CD528097CC0000B301E /* Storyboards */,
+				A3EE1CD628097CD0000B301E /* Resources */,
 			);
 			path = Animation;
+			sourceTree = "<group>";
+		};
+		A3EE1CD328097C9C000B301E /* App */ = {
+			isa = PBXGroup;
+			children = (
+				A3E0B5A8280846D2005E3D12 /* AppDelegate.swift */,
+				A3E0B5AA280846D2005E3D12 /* SceneDelegate.swift */,
+				A3E0B5B6280846D3005E3D12 /* Info.plist */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		A3EE1CD428097CB1000B301E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A3E0B5AC280846D2005E3D12 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		A3EE1CD528097CC0000B301E /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				A3E0B5AE280846D2005E3D12 /* Main.storyboard */,
+				A3E0B5B3280846D3005E3D12 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		A3EE1CD628097CD0000B301E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A3E0B5B1280846D3005E3D12 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A3EE1CD728097CF4000B301E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A3EE1CD828097D1F000B301E /* AnimationType.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A3EE1CDA28097EF3000B301E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A3EE1CDB28097F0D000B301E /* DataManager.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,7 +261,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3E0B5AD280846D2005E3D12 /* ViewController.swift in Sources */,
+				A3EE1CDC28097F0D000B301E /* DataManager.swift in Sources */,
 				A3E0B5A9280846D2005E3D12 /* AppDelegate.swift in Sources */,
+				A3EE1CD928097D1F000B301E /* AnimationType.swift in Sources */,
 				A3E0B5AB280846D2005E3D12 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -359,7 +414,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 64V4X3L8W4;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Animation/Info.plist;
+				INFOPLIST_FILE = Animation/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -388,7 +443,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 64V4X3L8W4;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Animation/Info.plist;
+				INFOPLIST_FILE = Animation/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

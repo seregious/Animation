@@ -11,6 +11,7 @@ struct AnimationType {
     let name, curve: String
     let force, duration, delay: Double
     
+    
     static func getAnimationList() -> AnimationType {
         let data = DataManager.shared
         return AnimationType(

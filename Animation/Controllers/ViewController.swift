@@ -8,9 +8,7 @@
 import Spring
 
 class ViewController: UIViewController {
-    
-    private var data = AnimationType.getAnimationList()
-    
+        
     @IBOutlet weak var animationView: SpringView!
     
     
@@ -21,31 +19,37 @@ class ViewController: UIViewController {
     @IBOutlet weak var delayLabel: UILabel!
     @IBOutlet weak var buttonLabel: UIButton!
     
+    private var data = AnimationType.getAnimationList()
+    private var isStarted = false
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         animationView.layer.cornerRadius = 25
-        getData()
-        makeAnimation(from: data)
+        getData(from: data)
+        buttonLabel.setTitle("Start", for: .normal)
     }
 
     @IBAction func buttonPressed() {
-        data = AnimationType.getAnimationList()
-        getData()
+        getData(from: data)
         makeAnimation(from: data)
+        data = AnimationType.getAnimationList()
+        buttonLabel.setTitle("Run" + data.name, for: .normal)
+
+        
+
     }
     
 }
 
 extension ViewController {
-    private func getData() {
+    private func getData(from data: AnimationType) {
         animationTypeLabel.text = "Animation: " + data.name
         curveLabel.text = "Curve: " + data.curve
         forceLabel.text = "Force: " + String(format: "%.02f", data.force)
         durationLabel.text = "Duration: " + String(format: "%.02f",data.duration)
         delayLabel.text = "Delay: " + String(format: "%.02f",data.delay)
-        buttonLabel.setTitle(data.name, for: .normal)
     }
     
     private func makeAnimation(from animation: AnimationType) {
